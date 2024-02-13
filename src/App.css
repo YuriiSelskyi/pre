@@ -1,38 +1,94 @@
-.App {
+.body {
+  color: #b800ff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transition: opacity 1s ease;
+  opacity: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.active {
+  opacity: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  opacity: 0.8;
+}
+
+.content {
+  color: #b800ff;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.title {
+  color: #b800ff;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.presents {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.present-img {
+  cursor: pointer;
+  animation-duration: 4s;
+  animation-name: zooming;
+  animation-iteration-count: infinite;
+}
+
+.me {
+  max-width: -webkit-fill-available;
+}
+
+.img-text {
+  position: absolute;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  top: 99px;
+  font-size: 24px;
+  font-weight: bold;
   color: white;
+  padding: 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes zooming {
+  80% {
+    transform: rotate(15deg);
+  }
+  90% {
+    transform: scale(1.1) rotate(15deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(15deg);
   }
 }
