@@ -1,6 +1,6 @@
 import * as React from "react";
 import { isMobile } from "react-device-detect";
-import { Dialog, DialogContent, DialogContentText, Slide } from "@mui/material";
+import { Dialog, DialogContent, Slide } from "@mui/material";
 import { BackgroundWrapper } from "./components/BackgroundWrapper";
 import { Paper } from "@mui/material";
 import present from "./photos/present.png";
@@ -72,42 +72,39 @@ function App() {
               aria-describedby="alert-dialog-slide-description"
             >
               <DialogContent>
-                <DialogContentText id="alert-dialog-slide-description">
-                  {clickNumber <= 1 ? (
-                    <div style={{ position: "relative" }}>
-                      <img alt="me" className="me" src={me} />
-                      <div className="img-text">
-                        Що може бути кращим подарунком за такого бравового
-                        легеня?
-                      </div>
+                {clickNumber <= 1 ? (
+                  <div style={{ position: "relative" }}>
+                    <img alt="me" className="me" src={me} />
+                    <div className="img-text">
+                      Що може бути кращим подарунком за такого бравового легеня?
                     </div>
-                  ) : null}
-                  {clickNumber >= 2 ? (
-                    <div style={{ position: "relative" }}>
-                      <img alt="kate" className="me" src={kate} />
-                      <div
-                        className="img-text"
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          top: isMobile ? "10px" : "40px",
-                        }}
+                  </div>
+                ) : null}
+                {clickNumber >= 2 ? (
+                  <div style={{ position: "relative" }}>
+                    <img alt="kate" className="me" src={kate} />
+                    <div
+                      className="img-text"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        top: isMobile ? "10px" : "40px",
+                      }}
+                    >
+                      Я так і знав що ти подивишся і в другий подарунок😁, тому
+                      тут презент для накращої, найрозумнішої і найкрасивішої
+                      дівчини на світі!
+                      <Paper
+                        elevation={0}
+                        variant="elevation"
+                        className="wrapper"
+                        style={{ marginTop: isMobile ? "20px" : "150px" }}
                       >
-                        Я так і знав що ти подивишся і в другий подарунок😁,
-                        тому тут презент для накращої, найрозумнішої і
-                        найкрасивішої дівчини на світі!
-                        <Paper
-                          elevation={0}
-                          variant="elevation"
-                          className="wrapper"
-                          style={{ marginTop: isMobile ? "20px" : "150px" }}
-                        >
-                          😊Сертифікат на терпеливий шопінг на 300$😊
-                        </Paper>
-                      </div>
+                        😊Сертифікат на терпеливий шопінг на 300$😊
+                      </Paper>
                     </div>
-                  ) : null}
-                </DialogContentText>
+                  </div>
+                ) : null}
               </DialogContent>
             </Dialog>
           </Paper>
