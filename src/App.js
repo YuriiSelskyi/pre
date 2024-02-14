@@ -68,6 +68,7 @@ function App() {
               open={open}
               TransitionComponent={Transition}
               keepMounted
+              style={{ width: '100%'}}
               onClose={handleClose}
               aria-describedby="alert-dialog-slide-description"
             >
