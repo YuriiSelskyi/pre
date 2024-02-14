@@ -68,14 +68,21 @@ function App() {
               open={open}
               TransitionComponent={Transition}
               keepMounted
-              style={{ width: '100%'}}
+              style={{ width: "100%" }}
               onClose={handleClose}
               aria-describedby="alert-dialog-slide-description"
             >
               <DialogContent>
                 {clickNumber <= 1 ? (
                   <div style={{ position: "relative" }}>
-                    <img alt="me" className="me" src={me} />
+                    <img
+                      alt="me"
+                      className="me"
+                      src={me}
+                      onClick={() => {
+                        handleClose();
+                      }}
+                    />
                     <div className="img-text">
                       Що може бути кращим подарунком за такого бравового легеня?
                     </div>
@@ -83,7 +90,14 @@ function App() {
                 ) : null}
                 {clickNumber >= 2 ? (
                   <div style={{ position: "relative" }}>
-                    <img alt="kate" className="me" src={kate} />
+                    <img
+                      alt="kate"
+                      className="me"
+                      src={kate}
+                      onClick={() => {
+                        handleClose();
+                      }}
+                    />
                     <div
                       className="img-text"
                       style={{
